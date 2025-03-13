@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Dataset Analysis</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #121212;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6b294f 0%, #8a2c64 100%);
+            color: #f5d0e3;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(139, 39, 75, 0.3);
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            color: #ffcce6;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #ff80b3;
+            border-bottom: 2px solid #6b294f;
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: #ff99c2;
+            margin-top: 30px;
+        }
+        
+        .metadata {
+            margin-top: 10px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid #6b294f;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #6b294f;
+        }
+        
+        th {
+            background-color: #3a1a2e;
+            padding: 12px;
+            text-align: left;
+            color: #ff99c2;
+        }
+        
+        td {
+            padding: 10px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #262626;
+        }
+        
+        .caption {
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            margin: 15px 0;
+            text-align: center;
+            color: #ff99c2;
+            font-size: 1.1em;
+        }
+        
+        .chart {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #262626;
+            padding: 20px;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #6b294f;
+            text-align: center;
+        }
+        
+        img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #6b294f;
+            display: inline-block;
+        }
+        
+        .findings {
+            background-color: #2a1a22;
+            padding: 25px;
+            border-left: 6px solid #8a2c64;
+            margin-top: 30px;
+            border-radius: 0 15px 15px 0;
+        }
+        
+        code {
+            font-family: Consolas, Monaco, 'Courier New', monospace;
+            background-color: #2a1a22;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #ff80b3;
+            border-top: 1px solid #6b294f;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        ul li:before {
+            content: "❀";
+            position: absolute;
+            left: 0;
+            color: #ff80b3;
+        }
+        
+        /* Add cute decorative elements */
+        .section:before {
+            content: "✿";
+            display: block;
+            text-align: center;
+            color: #ff80b3;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        /* Fix for images that aren't displaying */
+        .chart img {
+            background-color: #f5f5f5;
+            padding: 10px;
+        }
+        
+        /* Display message for missing images */
+        .image-placeholder {
+            padding: 40px 20px;
+            background-color: #3a1a2e;
+            color: #ff99c2;
+            text-align: center;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 2px dashed #ff80b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Iris Dataset Analysis</h1>
+        <div class="metadata">
+            <p>Author: Kshitij-Sahdev</p>
+            <p>Date: 2025-03-13 23:30:45</p>
+        </div>
+    </header>
+
+    <!-- Rest of the HTML remains the same, just replacing image elements -->
+    <!-- For brevity, I'll just show how to fix the image display issue -->
+
+    <div class="section">
+        <h2>1. Descriptive Summary</h2>
+        
+        <!-- Other content -->
+
+        <div class="chart">
+            <div class="caption">Figure 1: Correlation Matrix between Variables</div>
+            <!-- Replace with local file or valid URL -->
+            <div class="image-placeholder">
+                <p>Correlation Matrix Image</p>
+                <p>Please replace src with a valid local path or URL</p>
+                <p>Example: src="images/correlation_matrix.png"</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Similarly modify all other image elements -->
+                        <td>3.1</td>
+                        <td>1.5</td>
+                        <td>0.2</td>
+                        <td>setosa</td>
+                    </tr>
+                    <tr>
+                        <td>5.0</td>
+                        <td>3.6</td>
+                        <td>1.4</td>
+                        <td>0.2</td>
+                        <td>setosa</td>
+                    </tr>
+                    <tr>
+                        <td>5.4</td>
+                        <td>3.9</td>
+                        <td>1.7</td>
+                        <td>0.4</td>
+                        <td>setosa</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>1. Descriptive Summary</h2>
+        
+        <h3>Basic Statistics</h3>
+        <div class="chart">
+            <div class="caption">Table 2: Summary Statistics</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Statistic</th>
+                        <th>Sepal.Length</th>
+                        <th>Sepal.Width</th>
+                        <th>Petal.Length</th>
+                        <th>Petal.Width</th>
+                        <th>Species</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Min</td>
+                        <td>4.300</td>
+                        <td>2.000</td>
+                        <td>1.000</td>
+                        <td>0.100</td>
+                        <td>setosa:50</td>
+                    </tr>
+                    <tr>
+                        <td>1st Qu.</td>
+                        <td>5.100</td>
+                        <td>2.800</td>
+                        <td>1.600</td>
+                        <td>0.300</td>
+                        <td>versicolor:50</td>
+                    </tr>
+                    <tr>
+                        <td>Median</td>
+                        <td>5.800</td>
+                        <td>3.000</td>
+                        <td>4.350</td>
+                        <td>1.300</td>
+                        <td>virginica:50</td>
+                    </tr>
+                    <tr>
+                        <td>Mean</td>
+                        <td>5.843</td>
+                        <td>3.057</td>
+                        <td>3.758</td>
+                        <td>1.199</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3rd Qu.</td>
+                        <td>6.400</td>
+                        <td>3.300</td>
+                        <td>5.100</td>
+                        <td>1.800</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Max</td>
+                        <td>7.900</td>
+                        <td>4.400</td>
+                        <td>6.900</td>
+                        <td>2.500</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Detailed Statistics by Species</h3>
+        <div class="chart">
+            <div class="caption">Table 3: Summary Statistics by Species</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Species</th>
+                        <th>Count</th>
+                        <th>Mean_Sepal_Length</th>
+                        <th>Mean_Sepal_Width</th>
+                        <th>Mean_Petal_Length</th>
+                        <th>Mean_Petal_Width</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>setosa</td>
+                        <td>50</td>
+                        <td>5.01</td>
+                        <td>3.43</td>
+                        <td>1.46</td>
+                        <td>0.25</td>
+                    </tr>
+                    <tr>
+                        <td>versicolor</td>
+                        <td>50</td>
+                        <td>5.94</td>
+                        <td>2.77</td>
+                        <td>4.26</td>
+                        <td>1.33</td>
+                    </tr>
+                    <tr>
+                        <td>virginica</td>
+                        <td>50</td>
+                        <td>6.59</td>
+                        <td>2.97</td>
+                        <td>5.55</td>
+                        <td>2.03</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="chart">
+            <div class="caption">Figure 1: Correlation Matrix between Variables</div>
+            <img src="https://i.imgur.com/5wgNS2k.png" alt="Correlation Matrix">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>2. Dataset Variables</h2>
+        <p>The iris dataset includes <strong>5 key variables</strong>:</p>
+        
+        <div class="chart">
+            <div class="caption">Table 4: Variables in the Iris Dataset</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sepal.Length</td>
+                        <td>Numeric (cm)</td>
+                        <td>Length of the sepal</td>
+                    </tr>
+                    <tr>
+                        <td>Sepal.Width</td>
+                        <td>Numeric (cm)</td>
+                        <td>Width of the sepal</td>
+                    </tr>
+                    <tr>
+                        <td>Petal.Length</td>
+                        <td>Numeric (cm)</td>
+                        <td>Length of the petal</td>
+                    </tr>
+                    <tr>
+                        <td>Petal.Width</td>
+                        <td>Numeric (cm)</td>
+                        <td>Width of the petal</td>
+                    </tr>
+                    <tr>
+                        <td>Species</td>
+                        <td>Categorical</td>
+                        <td>Species of iris flower (setosa, versicolor, virginica)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>3. Scatter Plots</h2>
+        
+        <h3>Sepal Features</h3>
+        <div class="chart">
+            <div class="caption">Figure 2: Sepal Width vs. Length by Species</div>
+            <img src="https://i.imgur.com/rSeQRKy.png" alt="Sepal Width vs Length Scatter Plot">
+        </div>
+        
+        <h3>Petal Features</h3>
+        <div class="chart">
+            <div class="caption">Figure 3: Petal Width vs. Length by Species</div>
+            <img src="https://i.imgur.com/XbuZBDt.png" alt="Petal Width vs Length Scatter Plot">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Histograms and Pie Charts</h2>
+        
+        <h3>Histograms</h3>
+        <div class="chart">
+            <div class="caption">Figure 4: Distribution of Iris Measurements by Species</div>
+            <img src="https://i.imgur.com/ZsrUBLK.png" alt="Histograms of Iris Measurements">
+        </div>
+        
+        <h3>Pie Charts</h3>
+        <div class="chart">
+            <div class="caption">Figure 5: Distribution of Iris Species and Average Petal Length</div>
+            <img src="https://i.imgur.com/NZmvKju.png" alt="Pie Charts">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Key Findings</h2>
+        <div class="findings">
+            <h3>Species Differentiation:</h3>
+            <ul>
+                <li>The scatter plots reveal that iris species can be clearly differentiated based on their petal dimensions</li>
+                <li>Setosa species is completely separated from the other two species</li>
+                <li>Versicolor and Virginica show some overlap but are generally distinct</li>
+            </ul>
+            
+            <h3>Measurement Correlations:</h3>
+            <ul>
+                <li>Strong positive correlation (0.96) between petal length and petal width</li>
+                <li>Moderate negative correlation (-0.43) between sepal width and petal length</li>
+            </ul>
+            
+            <h3>Variable Importance:</h3>
+            <ul>
+                <li>Petal measurements are more useful than sepal measurements for species identification</li>
+                <li>Sepal width shows the most variation within species</li>
+            </ul>
+            
+            <h3>Distribution Patterns:</h3>
+            <ul>
+                <li>Histograms show that setosa has the smallest petals</li>
+                <li>Virginica has the largest petals</li>
+                <li>Measurements follow approximately normal distributions within each species</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Analysis completed by: Kshitij-Sahdev | Date: 2025-03-13 23:30:45</p>
+        <p>Dataset: Iris dataset (150 observations, 5 variables) ✿</p>
+    </footer>
+
+</body>
+</html>
