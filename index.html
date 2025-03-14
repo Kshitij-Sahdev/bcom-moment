@@ -99,7 +99,7 @@
         
         .chart {
             width: 100%;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 30px auto;
             background-color: #262626;
             padding: 20px;
@@ -168,7 +168,7 @@
         
         /* Fix for images that aren't displaying */
         .chart img {
-            background-color: #f5f5f5;
+            background-color: #2a1a22;
             padding: 10px;
         }
         
@@ -189,31 +189,51 @@
     <header>
         <h1>Iris Dataset Analysis</h1>
         <div class="metadata">
-            <p>Author: Kshitij-Sahdev</p>
-            <p>Date: 2025-03-13 23:30:45</p>
+            <p>Author: Kshitij-Sahdevi</p>
+            <p>Date: 2025-03-14 05:20:38</p>
         </div>
     </header>
 
-    <!-- Rest of the HTML remains the same, just replacing image elements -->
-    <!-- For brevity, I'll just show how to fix the image display issue -->
-
     <div class="section">
-        <h2>1. Descriptive Summary</h2>
+        <h2>Introduction</h2>
+        <p>This analysis examines the famous <strong>Iris dataset</strong> collected by Edgar Anderson and made famous by R.A. Fisher. The dataset contains <strong>150 observations</strong> of iris flowers from three species with <strong>5 variables</strong>, making it perfect for demonstrating various data analysis techniques.</p>
         
-        <!-- Other content -->
-
         <div class="chart">
-            <div class="caption">Figure 1: Correlation Matrix between Variables</div>
-            <!-- Replace with local file or valid URL -->
-            <div class="image-placeholder">
-                <p>Correlation Matrix Image</p>
-                <p>Please replace src with a valid local path or URL</p>
-                <p>Example: src="images/correlation_matrix.png"</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Similarly modify all other image elements -->
+            <div class="caption">Table 1: First 6 rows of the Iris dataset</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sepal.Length</th>
+                        <th>Sepal.Width</th>
+                        <th>Petal.Length</th>
+                        <th>Petal.Width</th>
+                        <th>Species</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5.1</td>
+                        <td>3.5</td>
+                        <td>1.4</td>
+                        <td>0.2</td>
+                        <td>setosa</td>
+                    </tr>
+                    <tr>
+                        <td>4.9</td>
+                        <td>3.0</td>
+                        <td>1.4</td>
+                        <td>0.2</td>
+                        <td>setosa</td>
+                    </tr>
+                    <tr>
+                        <td>4.7</td>
+                        <td>3.2</td>
+                        <td>1.3</td>
+                        <td>0.2</td>
+                        <td>setosa</td>
+                    </tr>
+                    <tr>
+                        <td>4.6</td>
                         <td>3.1</td>
                         <td>1.5</td>
                         <td>0.2</td>
@@ -353,7 +373,11 @@
 
         <div class="chart">
             <div class="caption">Figure 1: Correlation Matrix between Variables</div>
-            <img src="https://i.imgur.com/5wgNS2k.png" alt="Correlation Matrix">
+            <div class="image-placeholder">
+                <p>Correlation Matrix Visualization</p>
+                <p>Shows strong correlations between petal measurements</p>
+                <p>and moderate correlations between sepal and petal measurements</p>
+            </div>
         </div>
     </div>
 
@@ -408,13 +432,21 @@
         <h3>Sepal Features</h3>
         <div class="chart">
             <div class="caption">Figure 2: Sepal Width vs. Length by Species</div>
-            <img src="https://i.imgur.com/rSeQRKy.png" alt="Sepal Width vs Length Scatter Plot">
+            <div class="image-placeholder">
+                <p>Scatter Plot: Sepal Width vs. Length</p>
+                <p>Shows clustering of sepal measurements by species</p>
+                <p>with some overlap between versicolor and virginica</p>
+            </div>
         </div>
         
         <h3>Petal Features</h3>
         <div class="chart">
             <div class="caption">Figure 3: Petal Width vs. Length by Species</div>
-            <img src="https://i.imgur.com/XbuZBDt.png" alt="Petal Width vs Length Scatter Plot">
+            <div class="image-placeholder">
+                <p>Scatter Plot: Petal Width vs. Length</p>
+                <p>Shows clear separation of setosa from other species</p>
+                <p>with some overlap between versicolor and virginica</p>
+            </div>
         </div>
     </div>
 
@@ -424,13 +456,21 @@
         <h3>Histograms</h3>
         <div class="chart">
             <div class="caption">Figure 4: Distribution of Iris Measurements by Species</div>
-            <img src="https://i.imgur.com/ZsrUBLK.png" alt="Histograms of Iris Measurements">
+            <div class="image-placeholder">
+                <p>Histograms of Iris Measurements</p>
+                <p>Shows distribution of each measurement across species</p>
+                <p>with distinct patterns for each species</p>
+            </div>
         </div>
         
         <h3>Pie Charts</h3>
         <div class="chart">
             <div class="caption">Figure 5: Distribution of Iris Species and Average Petal Length</div>
-            <img src="https://i.imgur.com/NZmvKju.png" alt="Pie Charts">
+            <div class="image-placeholder">
+                <p>Pie Charts showing:</p>
+                <p>1. Equal distribution of species (50 observations each)</p>
+                <p>2. Proportion of average petal length by species</p>
+            </div>
         </div>
     </div>
 
@@ -466,7 +506,7 @@
     </div>
 
     <footer>
-        <p>Analysis completed by: Kshitij-Sahdev | Date: 2025-03-13 23:30:45</p>
+        <p>Analysis completed by: Kshitij-Sahdevi | Date: 2025-03-14 05:20:38</p>
         <p>Dataset: Iris dataset (150 observations, 5 variables) ✿</p>
     </footer>
 
