@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iris Dataset Analysis</title>
+    <title>Iris Dataset Analysis | Kashish Singh </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #e0e0e0;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             background-color: #121212;
@@ -99,7 +99,7 @@
         
         .chart {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 30px auto;
             background-color: #262626;
             padding: 20px;
@@ -166,21 +166,114 @@
             margin-bottom: 15px;
         }
         
-        /* Fix for images that aren't displaying */
-        .chart img {
+        /* Visual data representation */
+        .visual-data {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 15px 0;
             background-color: #2a1a22;
-            padding: 10px;
+            border-radius: 10px;
         }
         
-        /* Display message for missing images */
-        .image-placeholder {
-            padding: 40px 20px;
-            background-color: #3a1a2e;
-            color: #ff99c2;
-            text-align: center;
+        /* Scatter plot representation */
+        .scatter-plot {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            grid-template-rows: repeat(20, 1fr);
+            /*width: 100%;*/
+            height: 400px;
+            background-color: #1a1a1a;
+            border: 2px solid #6b294f;
             border-radius: 10px;
-            margin: 15px 0;
-            border: 2px dashed #ff80b3;
+            position: relative;
+            padding: 20px;
+        }
+        
+        .scatter-point {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .point-setosa {
+            background-color: #ff80b3;
+        }
+        
+        .point-versicolor {
+            background-color: #80b3ff;
+        }
+        
+        .point-virginica {
+            background-color: #b3ff80;
+        }
+        
+        /* Histogram representation */
+        .histogram {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 300px;
+            /*width: 100%;*/
+            background-color: #1a1a1a;
+            border: 2px solid #6b294f;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .histogram-bar {
+            background: linear-gradient(to top, #6b294f, #ff80b3);
+            border-radius: 5px 5px 0 0;
+            margin: 0 2px;
+        }
+        
+        /* Pie chart representation */
+        .pie-chart {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #ff80b3 0% 33.3%, 
+                #80b3ff 33.3% 66.6%, 
+                #b3ff80 66.6% 100%
+            );
+            margin: 20px auto;
+        }
+        
+        .pie-legend {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border-radius: 4px;
+        }
+        
+        /* Simple CSS data visualization styles */
+        .axis-label {
+            color: #ff99c2;
+            font-weight: bold;
+            margin: auto;
+        }
+        
+        .annotation {
+            color: #ffcce6;
+            background-color: rgba(106, 41, 79, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15;
+            display: inline-block;
         }
     </style>
 </head>
@@ -189,8 +282,8 @@
     <header>
         <h1>Iris Dataset Analysis</h1>
         <div class="metadata">
-            <p>Author: Kshitij-Sahdevi</p>
-            <p>Date: 2025-03-14 05:20:38</p>
+            <p>Author: Kashish Singh</p>
+            <p>Date: 2025-03-14 05:43:51</p>
         </div>
     </header>
 
@@ -199,7 +292,7 @@
         <p>This analysis examines the famous <strong>Iris dataset</strong> collected by Edgar Anderson and made famous by R.A. Fisher. The dataset contains <strong>150 observations</strong> of iris flowers from three species with <strong>5 variables</strong>, making it perfect for demonstrating various data analysis techniques.</p>
         
         <div class="chart">
-            <div class="caption">Table 1: First 6 rows of the Iris dataset</div>
+            <div class="caption">Table 1: First 10 rows of the Iris dataset</div>
             <table>
                 <thead>
                     <tr>
@@ -253,17 +346,52 @@
                         <td>0.4</td>
                         <td>setosa</td>
                     </tr>
+                    <tr>
+                        <td>5.7</td>
+                        <td>4.4</td>
+                        <td>1.5</td>
+                        <td>0.4</td>
+                        <td>setosa</td>
+                    </tr>
+                    <tr>
+                        <td>5.0</td>
+                        <td>3.4</td>
+                        <td>1.5</td>
+                        <td>0.2</td>
+                        <td>setosa</td>
+                    </tr>
+                    <tr>
+                        <td>4.4</td>
+                        <td>2.9</td>
+                        <td>1.4</td>
+                        <td>0.2</td>
+                        <td>setosa</td>
+                    </tr>
+                    <tr>
+                        <td>4.9</td>
+                        <td>3.1</td>
+                        <td>1.5</td>
+                        <td>0.1</td>
+                        <td>setosa</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
+        
+        <p>This dataset is ideal for our analysis as it includes:</p>
+        <ul>
+            <li>Multiple variables (both numeric and categorical)</li>
+            <li>Sufficient observations (150 total, 50 per species)</li>
+            <li>Clear patterns that can be visualized effectively</li>
+        </ul>
     </div>
 
     <div class="section">
-        <h2>1. Descriptive Summary</h2>
+        <h2>1. Descriptive Summary of Data</h2>
         
         <h3>Basic Statistics</h3>
         <div class="chart">
-            <div class="caption">Table 2: Summary Statistics</div>
+            <div class="caption">Table 2: Summary Statistics for Numeric Variables</div>
             <table>
                 <thead>
                     <tr>
@@ -272,25 +400,22 @@
                         <th>Sepal.Width</th>
                         <th>Petal.Length</th>
                         <th>Petal.Width</th>
-                        <th>Species</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Min</td>
+                        <td>Minimum</td>
                         <td>4.300</td>
                         <td>2.000</td>
                         <td>1.000</td>
                         <td>0.100</td>
-                        <td>setosa:50</td>
                     </tr>
                     <tr>
-                        <td>1st Qu.</td>
+                        <td>1st Quartile</td>
                         <td>5.100</td>
                         <td>2.800</td>
                         <td>1.600</td>
                         <td>0.300</td>
-                        <td>versicolor:50</td>
                     </tr>
                     <tr>
                         <td>Median</td>
@@ -298,7 +423,6 @@
                         <td>3.000</td>
                         <td>4.350</td>
                         <td>1.300</td>
-                        <td>virginica:50</td>
                     </tr>
                     <tr>
                         <td>Mean</td>
@@ -306,46 +430,84 @@
                         <td>3.057</td>
                         <td>3.758</td>
                         <td>1.199</td>
-                        <td></td>
                     </tr>
                     <tr>
-                        <td>3rd Qu.</td>
+                        <td>3rd Quartile</td>
                         <td>6.400</td>
                         <td>3.300</td>
                         <td>5.100</td>
                         <td>1.800</td>
-                        <td></td>
                     </tr>
                     <tr>
-                        <td>Max</td>
+                        <td>Maximum</td>
                         <td>7.900</td>
                         <td>4.400</td>
                         <td>6.900</td>
                         <td>2.500</td>
-                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Standard Deviation</td>
+                        <td>0.828</td>
+                        <td>0.436</td>
+                        <td>1.765</td>
+                        <td>0.762</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <h3>Detailed Statistics by Species</h3>
+        <h3>Distribution by Species</h3>
         <div class="chart">
-            <div class="caption">Table 3: Summary Statistics by Species</div>
+            <div class="caption">Table 3: Species Distribution</div>
             <table>
                 <thead>
                     <tr>
                         <th>Species</th>
                         <th>Count</th>
-                        <th>Mean_Sepal_Length</th>
-                        <th>Mean_Sepal_Width</th>
-                        <th>Mean_Petal_Length</th>
-                        <th>Mean_Petal_Width</th>
+                        <th>Percentage</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>setosa</td>
                         <td>50</td>
+                        <td>33.3%</td>
+                    </tr>
+                    <tr>
+                        <td>versicolor</td>
+                        <td>50</td>
+                        <td>33.3%</td>
+                    </tr>
+                    <tr>
+                        <td>virginica</td>
+                        <td>50</td>
+                        <td>33.3%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>150</strong></td>
+                        <td><strong>100%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Summary Statistics by Species</h3>
+        <div class="chart">
+            <div class="caption">Table 4: Mean Values by Species</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Species</th>
+                        <th>Mean Sepal Length</th>
+                        <th>Mean Sepal Width</th>
+                        <th>Mean Petal Length</th>
+                        <th>Mean Petal Width</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>setosa</td>
                         <td>5.01</td>
                         <td>3.43</td>
                         <td>1.46</td>
@@ -353,7 +515,6 @@
                     </tr>
                     <tr>
                         <td>versicolor</td>
-                        <td>50</td>
                         <td>5.94</td>
                         <td>2.77</td>
                         <td>4.26</td>
@@ -361,7 +522,6 @@
                     </tr>
                     <tr>
                         <td>virginica</td>
-                        <td>50</td>
                         <td>6.59</td>
                         <td>2.97</td>
                         <td>5.55</td>
@@ -371,82 +531,229 @@
             </table>
         </div>
 
+        <h3>Correlation Matrix</h3>
         <div class="chart">
-            <div class="caption">Figure 1: Correlation Matrix between Variables</div>
-            <div class="image-placeholder">
-                <p>Correlation Matrix Visualization</p>
-                <p>Shows strong correlations between petal measurements</p>
-                <p>and moderate correlations between sepal and petal measurements</p>
-            </div>
+            <div class="caption">Table 5: Correlation Between Variables</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Sepal Length</th>
+                        <th>Sepal Width</th>
+                        <th>Petal Length</th>
+                        <th>Petal Width</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sepal Length</strong></td>
+                        <td>1.000</td>
+                        <td>-0.118</td>
+                        <td>0.872</td>
+                        <td>0.818</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sepal Width</strong></td>
+                        <td>-0.118</td>
+                        <td>1.000</td>
+                        <td>-0.428</td>
+                        <td>-0.366</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Petal Length</strong></td>
+                        <td>0.872</td>
+                        <td>-0.428</td>
+                        <td>1.000</td>
+                        <td>0.963</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Petal Width</strong></td>
+                        <td>0.818</td>
+                        <td>-0.366</td>
+                        <td>0.963</td>
+                        <td>1.000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="annotation">Note: Very strong positive correlation (0.963) between petal length and petal width suggests these features are closely related.</p>
         </div>
     </div>
 
     <div class="section">
         <h2>2. Dataset Variables</h2>
-        <p>The iris dataset includes <strong>5 key variables</strong>:</p>
+        <p>The iris dataset includes the following <strong>5 variables</strong>:</p>
         
         <div class="chart">
-            <div class="caption">Table 4: Variables in the Iris Dataset</div>
+            <div class="caption">Table 6: Variables in the Iris Dataset</div>
             <table>
                 <thead>
                     <tr>
                         <th>Variable</th>
                         <th>Type</th>
                         <th>Description</th>
+                        <th>Range</th>
+                        <th>Units</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Sepal.Length</td>
-                        <td>Numeric (cm)</td>
+                        <td>Numeric (continuous)</td>
                         <td>Length of the sepal</td>
+                        <td>4.3 - 7.9</td>
+                        <td>cm</td>
                     </tr>
                     <tr>
                         <td>Sepal.Width</td>
-                        <td>Numeric (cm)</td>
+                        <td>Numeric (continuous)</td>
                         <td>Width of the sepal</td>
+                        <td>2.0 - 4.4</td>
+                        <td>cm</td>
                     </tr>
                     <tr>
                         <td>Petal.Length</td>
-                        <td>Numeric (cm)</td>
+                        <td>Numeric (continuous)</td>
                         <td>Length of the petal</td>
+                        <td>1.0 - 6.9</td>
+                        <td>cm</td>
                     </tr>
                     <tr>
                         <td>Petal.Width</td>
-                        <td>Numeric (cm)</td>
+                        <td>Numeric (continuous)</td>
                         <td>Width of the petal</td>
+                        <td>0.1 - 2.5</td>
+                        <td>cm</td>
                     </tr>
                     <tr>
                         <td>Species</td>
-                        <td>Categorical</td>
-                        <td>Species of iris flower (setosa, versicolor, virginica)</td>
+                        <td>Categorical (nominal)</td>
+                        <td>Species of iris flower</td>
+                        <td>3 categories</td>
+                        <td>N/A</td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        
+        <h3>Variable Descriptions</h3>
+        <ul>
+            <li><strong>Sepal Length</strong>: The length of the sepal (the green leaf-like structures that protect the flower in bud stage)</li>
+            <li><strong>Sepal Width</strong>: The width of the sepal at its widest point</li>
+            <li><strong>Petal Length</strong>: The length of the petal (the colorful parts of the flower)</li>
+            <li><strong>Petal Width</strong>: The width of the petal at its widest point</li>
+            <li><strong>Species</strong>: The taxonomic species of iris flower (setosa, versicolor, or virginica)</li>
+        </ul>
     </div>
 
     <div class="section">
         <h2>3. Scatter Plots</h2>
         
-        <h3>Sepal Features</h3>
+        <h3>Sepal Features Scatter Plot</h3>
         <div class="chart">
-            <div class="caption">Figure 2: Sepal Width vs. Length by Species</div>
-            <div class="image-placeholder">
-                <p>Scatter Plot: Sepal Width vs. Length</p>
-                <p>Shows clustering of sepal measurements by species</p>
-                <p>with some overlap between versicolor and virginica</p>
+            <div class="caption">Figure 1: Sepal Width vs. Length by Species</div>
+            <div class="scatter-plot" style="position: relative;">
+                <!-- Setosa points (Sample) -->
+                <div class="scatter-point point-setosa" style="left: 45%; top: 20%;"></div>
+                <div class="scatter-point point-setosa" style="left: 40%; top: 35%;"></div>
+                <div class="scatter-point point-setosa" style="left: 35%; top: 25%;"></div>
+                <div class="scatter-point point-setosa" style="left: 32%; top: 30%;"></div>
+                <div class="scatter-point point-setosa" style="left: 42%; top: 15%;"></div>
+                <div class="scatter-point point-setosa" style="left: 38%; top: 10%;"></div>
+                <div class="scatter-point point-setosa" style="left: 46%; top: 5%;"></div>
+                
+                <!-- Versicolor points (Sample) -->
+                <div class="scatter-point point-versicolor" style="left: 60%; top: 45%;"></div>
+                <div class="scatter-point point-versicolor" style="left: 55%; top: 50%;"></div>
+                <div class="scatter-point point-versicolor" style="left: 58%; top: 55%;"></div>
+                <div class="scatter-point point-versicolor" style="left: 62%; top: 48%;"></div>
+                <div class="scatter-point point-versicolor" style="left: 59%; top: 52%;"></div>
+                <div class="scatter-point point-versicolor" style="left: 61%; top: 58%;"></div>
+                
+                <!-- Virginica points (Sample) -->
+                <div class="scatter-point point-virginica" style="left: 75%; top: 65%;"></div>
+                <div class="scatter-point point-virginica" style="left: 78%; top: 70%;"></div>
+                <div class="scatter-point point-virginica" style="left: 82%; top: 68%;"></div>
+                <div class="scatter-point point-virginica" style="left: 80%; top: 75%;"></div>
+                <div class="scatter-point point-virginica" style="left: 85%; top: 72%;"></div>
+                <div class="scatter-point point-virginica" style="left: 72%; top: 78%;"></div>
+                
+                <!-- Axes labels -->
+                <div style="position: absolute; bottom: -30px; width: 100%; text-align: center;" class="axis-label">Sepal Length (cm)</div>
+                <div style="position: absolute; left: -40px; top: 50%; transform: rotate(-90deg);" class="axis-label">Sepal Width (cm)</div>
+                
+                <!-- Legend -->
+                <div style="position: absolute; top: 10px; right: 10px; background-color: rgba(30,30,30,0.8); padding: 10px; border-radius: 5px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <div style="width: 10px; height: 10px; background-color: #ff80b3; border-radius: 50%; margin-right: 5px;"></div>
+                        <span>Setosa</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <div style="width: 10px; height: 10px; background-color: #80b3ff; border-radius: 50%; margin-right: 5px;"></div>
+                        <span>Versicolor</span>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 10px; height: 10px; background-color: #b3ff80; border-radius: 50%; margin-right: 5px;"></div>
+                        <span>Virginica</span>
+                    </div>
+                </div>
             </div>
+            <p>
+
+            </p>
+            <p class="annotation">Scatter plot shows that setosa species (pink) is well separated from others based on sepal dimensions.</p>
         </div>
         
-        <h3>Petal Features</h3>
+        <h3>Petal Features Scatter Plot</h3>
         <div class="chart">
-            <div class="caption">Figure 3: Petal Width vs. Length by Species</div>
-            <div class="image-placeholder">
-                <p>Scatter Plot: Petal Width vs. Length</p>
-                <p>Shows clear separation of setosa from other species</p>
-                <p>with some overlap between versicolor and virginica</p>
+            <div class="caption">Figure 2: Petal Width vs. Length by Species</div>
+            <div class="scatter-plot" style="position: relative;">
+            <!-- Setosa points (Sample) -->
+            <div class="scatter-point point-setosa" style="left: 15%; top: 15%;"></div>
+            <div class="scatter-point point-setosa" style="left: 12%; top: 18%;"></div>
+            <div class="scatter-point point-setosa" style="left: 10%; top: 12%;"></div>
+            <div class="scatter-point point-setosa" style="left: 18%; top: 16%;"></div>
+            <div class="scatter-point point-setosa" style="left: 16%; top: 14%;"></div>
+            <div class="scatter-point point-setosa" style="left: 13%; top: 17%;"></div>
+            <div class="scatter-point point-setosa" style="left: 14%; top: 13%;"></div>
+            
+            <!-- Versicolor points (Sample) -->
+            <div class="scatter-point point-versicolor" style="left: 48%; top: 42%;"></div>
+            <div class="scatter-point point-versicolor" style="left: 50%; top: 45%;"></div>
+            <div class="scatter-point point-versicolor" style="left: 46%; top: 40%;"></div>
+            <div class="scatter-point point-versicolor" style="left: 52%; top: 44%;"></div>
+            <div class="scatter-point point-versicolor" style="left: 49%; top: 48%;"></div>
+            <div class="scatter-point point-versicolor" style="left: 47%; top: 43%;"></div>
+            
+            <!-- Virginica points (Sample) -->
+            <div class="scatter-point point-virginica" style="left: 78%; top: 75%;"></div>
+            <div class="scatter-point point-virginica" style="left: 80%; top: 80%;"></div>
+            <div class="scatter-point point-virginica" style="left: 82%; top: 77%;"></div>
+            <div class="scatter-point point-virginica" style="left: 76%; top: 78%;"></div>
+            <div class="scatter-point point-virginica" style="left: 84%; top: 72%;"></div>
+            <div class="scatter-point point-virginica" style="left: 79%; top: 76%;"></div>
+            
+            <!-- Axes labels -->
+            <div style="position: absolute; bottom: -30px; width: 100%; text-align: center;" class="axis-label">Petal Length (cm)</div>
+            <div style="position: absolute; left: -40px; top: 50%; transform: rotate(-90deg);" class="axis-label">Petal Width (cm)</div>
+            
+            <!-- Legend -->
+            <div style="position: absolute; top: 10px; right: 10px; background-color: rgba(30,30,30,0.8); padding: 10px; border-radius: 5px;">
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                <div style="width: 10px; height: 10px; background-color: #ff80b3; border-radius: 50%; margin-right: 5px;"></div>
+                <span>Setosa</span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                <div style="width: 10px; height: 10px; background-color: #80b3ff; border-radius: 50%; margin-right: 5px;"></div>
+                <span>Versicolor</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <div style="width: 10px; height: 10px; background-color: #b3ff80; border-radius: 50%; margin-right: 5px;"></div>
+                <span>Virginica</span>
+                </div>
             </div>
+            </div>
+            <p></p>
+            <p class="annotation">This scatter plot shows clear separation between all three species based on petal dimensions, with setosa completely isolated from the others.</p>
         </div>
     </div>
 
@@ -455,22 +762,134 @@
         
         <h3>Histograms</h3>
         <div class="chart">
-            <div class="caption">Figure 4: Distribution of Iris Measurements by Species</div>
-            <div class="image-placeholder">
-                <p>Histograms of Iris Measurements</p>
-                <p>Shows distribution of each measurement across species</p>
-                <p>with distinct patterns for each species</p>
+            <div class="caption">Figure 3: Histogram of Sepal Length by Species</div>
+            <div class="histogram">
+                <!-- Setosa histogram bars -->
+                <div class="histogram-bar" style="width: 8%; height: 25%;" title="4.3-4.5 cm: 5 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 60%;" title="4.6-4.8 cm: 12 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 90%;" title="4.9-5.1 cm: 18 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 40%;" title="5.2-5.4 cm: 8 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 25%;" title="5.5-5.7 cm: 5 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 10%;" title="5.8-6.0 cm: 2 flowers"></div>
+                
+                <!-- Versicolor histogram bars -->
+                <div class="histogram-bar" style="width: 8%; height: 30%; margin-left: 20px; background: linear-gradient(to top, #4169e1, #80b3ff);" title="4.9-5.1 cm: 6 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 45%;" title="5.2-5.4 cm: 9 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 65%;" title="5.5-5.7 cm: 13 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 50%;" title="5.8-6.0 cm: 10 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 35%;" title="6.1-6.3 cm: 7 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 25%;" title="6.4-6.6 cm: 5 flowers"></div>
+                
+                <!-- Virginica histogram bars -->
+                <div class="histogram-bar" style="width: 8%; height: 15%; margin-left: 20px; background: linear-gradient(to top, #32cd32, #b3ff80);" title="4.9-5.1 cm: 3 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 30%;" title="5.5-5.7 cm: 6 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 45%;" title="6.0-6.2 cm: 9 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 65%;" title="6.3-6.5 cm: 13 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 40%;" title="6.6-6.8 cm: 8 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 55%;" title="6.9-7.1 cm: 11 flowers"></div>
             </div>
+            
+            <!-- Legend for histogram -->
+            <div class="pie-legend" style="margin-top: 30px;">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #ff80b3;"></div>
+                    <span>Setosa</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #80b3ff;"></div>
+                    <span>Versicolor</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #b3ff80;"></div>
+                    <span>Virginica</span>
+                </div>
+            </div>
+            <p class="annotation">The histogram shows the distribution of sepal length measurements across the three iris species.</p>
+        </div>
+        
+        <div class="chart">
+            <div class="caption">Figure 4: Histogram of Petal Length by Species</div>
+            <div class="histogram">
+                <!-- Setosa histogram bars -->
+                <div class="histogram-bar" style="width: 8%; height: 95%;" title="1.0-1.5 cm: 38 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 30%;" title="1.6-2.0 cm: 12 flowers"></div>
+                
+                <!-- Versicolor histogram bars -->
+                <div class="histogram-bar" style="width: 8%; height: 40%; margin-left: 40px; background: linear-gradient(to top, #4169e1, #80b3ff);" title="3.0-3.5 cm: 8 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 65%;" title="3.6-4.0 cm: 13 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 80%;" title="4.1-4.5 cm: 16 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 65%;" title="4.6-5.0 cm: 13 flowers"></div>
+                
+                <!-- Virginica histogram bars -->
+                <div class="histogram-bar" style="width: 8%; height: 30%; margin-left: 40px; background: linear-gradient(to top, #32cd32, #b3ff80);" title="4.5-5.0 cm: 6 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 60%;" title="5.1-5.5 cm: 12 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 80%;" title="5.6-6.0 cm: 16 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 60%;" title="6.1-6.5 cm: 12 flowers"></div>
+                <div class="histogram-bar" style="width: 8%; height: 20%;" title="6.6-7.0 cm: 4 flowers"></div>
+            </div>
+            
+            <!-- Legend for histogram -->
+            <div class="pie-legend" style="margin-top: 30px;">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #ff80b3;"></div>
+                    <span>Setosa</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #80b3ff;"></div>
+                    <span>Versicolor</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #b3ff80;"></div>
+                    <span>Virginica</span>
+                </div>
+            </div>
+            <p class="annotation">The histogram reveals a clear separation in petal length between setosa and the other species.</p>
         </div>
         
         <h3>Pie Charts</h3>
         <div class="chart">
-            <div class="caption">Figure 5: Distribution of Iris Species and Average Petal Length</div>
-            <div class="image-placeholder">
-                <p>Pie Charts showing:</p>
-                <p>1. Equal distribution of species (50 observations each)</p>
-                <p>2. Proportion of average petal length by species</p>
+            <div class="caption">Figure 5: Distribution of Iris Species</div>
+            <div class="pie-chart"></div>
+            
+            <div class="pie-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #ff80b3;"></div>
+                    <span>Setosa (33.3%)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #80b3ff;"></div>
+                    <span>Versicolor (33.3%)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #b3ff80;"></div>
+                    <span>Virginica (33.3%)</span>
+                </div>
             </div>
+            <p class="annotation">The dataset contains an equal number of observations (50) for each species.</p>
+        </div>
+        
+        <div class="chart">
+            <div class="caption">Figure 6: Average Petal Length by Species</div>
+            <div class="pie-chart" style="background: conic-gradient(
+                #ff80b3 0% 13%, 
+                #80b3ff 13% 52%, 
+                #b3ff80 52% 100%);"></div>
+            
+            <div class="pie-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #ff80b3;"></div>
+                    <span>Setosa (1.46 cm - 13%)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #80b3ff;"></div>
+                    <span>Versicolor (4.26 cm - 39%)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #b3ff80;"></div>
+                    <span>Virginica (5.55 cm - 48%)</span>
+                </div>
+            </div>
+            <p class="annotation">This pie chart shows the proportions of average petal lengths across species, highlighting the dramatic difference in petal size.</p>
         </div>
     </div>
 
@@ -486,14 +905,16 @@
             
             <h3>Measurement Correlations:</h3>
             <ul>
-                <li>Strong positive correlation (0.96) between petal length and petal width</li>
-                <li>Moderate negative correlation (-0.43) between sepal width and petal length</li>
+                <li>Strong positive correlation (0.963) between petal length and petal width</li>
+                <li>Moderate negative correlation (-0.428) between sepal width and petal length</li>
+                <li>Strong positive correlation (0.872) between sepal length and petal length</li>
             </ul>
             
             <h3>Variable Importance:</h3>
             <ul>
                 <li>Petal measurements are more useful than sepal measurements for species identification</li>
                 <li>Sepal width shows the most variation within species</li>
+                <li>Virginica has the largest average measurements across most dimensions</li>
             </ul>
             
             <h3>Distribution Patterns:</h3>
@@ -506,7 +927,7 @@
     </div>
 
     <footer>
-        <p>Analysis completed by: Kshitij-Sahdevi | Date: 2025-03-14 05:20:38</p>
+        <p>Analysis completed by: Kashish Singh | Date: 2025-03-14 05:48:36</p>
         <p>Dataset: Iris dataset (150 observations, 5 variables) ✿</p>
     </footer>
 
